@@ -1,9 +1,6 @@
 
-img {
-    height: 100px;
-    width: 100px;
-    border: solid 1px black;
-    margin: 10px;
+.container {
+    margin: 5px;
 }
 
 div {
@@ -16,20 +13,29 @@ div {
 
 h1 {
     background: orange;
-    padding: 20px 0px;
+    padding: 20px 5px;
 }
 
 #main {
     background: pink;
     color: green;
+    padding: 5px;
 }
 
 #random {
     background: green;
+    font-size: 30px;
 }
 
 #score {
     background: cyan;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border: solid 1px black;
+    margin: 10px;
 }
 
 #total {
