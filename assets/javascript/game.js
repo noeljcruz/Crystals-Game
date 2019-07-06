@@ -14,31 +14,23 @@ function newNums() {
     crystal2 = Math.floor(Math.random() * (12 - 1)) + 1;
     crystal3 = Math.floor(Math.random() * (12 - 1)) + 1;
     crystal4 = Math.floor(Math.random() * (12 - 1)) + 1;
+    counter = 0;
+    $("#counter").text(counter);
+    $("#crystal1").attr("value", crystal1);
+    $("#crystal2").attr("value", crystal2);
+    $("#crystal3").attr("value", crystal3);
+    $("#crystal4").attr("value", crystal4);
 }
 
 newNums();
 
-$(document).ready(function() {
-
-    $("#crystal1").on("click", function () {
-        counter = counter + crystal1;
-        $("#counter").text(counter);
-    });
-
-    $("#crystal2").on("click", function () {
-        counter = counter + crystal2;
-        $("#counter").text(counter);
-    });
-
-    $("#crystal3").on("click", function () {
-        counter = counter + crystal3;
-        $("#counter").text(counter);
-    });
-
-    $("#crystal4").on("click", function () {
-        counter = counter + crystal4;
-        $("#counter").text(counter);
-    });
+$(".crystal").click(function () {
+    
+    var counterNumber = parseInt(counter);
+    var objectValue = $(this).attr("value");
+    counter = counterNumber + parseInt(objectValue);
+    
+    $("#counter").text(counter);
     
     if (counter > randomNum) {
         losses++;
@@ -50,9 +42,7 @@ $(document).ready(function() {
         newNums();
     }
 
-    $("#random").text(randomNum);
     $("#wins").text("Wins: " + wins);
     $("#losses").text("Losses: " + losses);
-    $("#counter").text(counter);
-
+    $("#random").text(randomNum);
 });
