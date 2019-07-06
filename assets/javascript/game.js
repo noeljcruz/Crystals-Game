@@ -15,11 +15,12 @@ function newNums() {
     crystal3 = Math.floor(Math.random() * (12 - 1)) + 1;
     crystal4 = Math.floor(Math.random() * (12 - 1)) + 1;
     counter = 0;
-    $("#counter").text(counter);
+    $("#random").text(randomNum);
     $("#crystal1").attr("value", crystal1);
     $("#crystal2").attr("value", crystal2);
     $("#crystal3").attr("value", crystal3);
     $("#crystal4").attr("value", crystal4);
+    $("#counter").text(counter);
 }
 
 newNums();
@@ -36,13 +37,10 @@ $(".crystal").click(function () {
         losses++;
         newNums();
     }
-    
     if (counter === randomNum) {
         wins++;
         newNums();
     }
-
     $("#wins").text("Wins: " + wins);
     $("#losses").text("Losses: " + losses);
-    $("#random").text(randomNum);
 });
